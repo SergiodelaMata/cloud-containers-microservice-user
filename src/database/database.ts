@@ -2,7 +2,6 @@ import { Connection, createConnection } from "typeorm";
 import { UserEntity } from "../entities/user.entity";
 import dotenv from "dotenv";
 
-
 export class Database {
   private connection: Connection;
 
@@ -18,7 +17,10 @@ export class Database {
       entities: [
         UserEntity,
       ],
+      synchronize:true
     });
+
+    console.log("State connection database: " + this.connection.isConnected);
     return this.connection;
   }
 

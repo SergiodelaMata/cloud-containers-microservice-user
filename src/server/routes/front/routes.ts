@@ -1,30 +1,53 @@
-import express, { Router } from "express";
+import {UserController, GetUsers, GetUser} from "../../../controllers/user.controller"
+import express, { Router, Request, Response} from "express";
 
 const router: Router = express.Router();
 
-router.get("/movies", (req, res) => {
-  res.status(200).send(
-    [{ ok: true }, { ok: true }, { ok: true }]
-  );
+router.get("/users", async(_req: Request, res: Response) =>{
+  const userData: GetUsers = await UserController.getUsers(_req);
+  res.send(userData);
+})
+
+router.get("/users/:userId", async(_req: Request, res: Response) =>{
+  const userData: GetUser = await UserController.getUser(_req);
+  res.send(userData);
+})
+
+router.post("/user", async(_req: Request, res: Response) => {
+  const verify = await UserController.saveUser(_req);
+  if(verify)
+  {
+    res.status(200).send({status:"Saved"});
+  }
+  else
+  {
+    res.status(200).send({status:"User already saved"});
+  }
 });
 
-router.get("/movies/:movie", (req, res) => {
-  res.status(200).send(
-    { ok: req.params.movie }
-  );
+router.put("/user/update", async(_req: Request, res: Response) => {
+  const verify = await UserController.updateUser(_req);
+  if(verify)
+  {
+    res.status(200).send({status:"Updated"});
+  }
+  else
+  {
+    res.status(200).send({status:"User couldn't be updated"});
+  }
 });
 
-router.post("/movie", (req, res) => {
-  res.status(200).send(
-    req.body
-  );
-});
 
-router.put("/movie/:movie", (req, res) => {
-  res.status(200).send(
-    {body: req.body, id: req.params.movie}
-  );
+router.delete("/admin/user/:userId", async(_req: Request, res: Response) => {
+  const verify = await UserController.deleteUser(_req);
+  if(verify)
+  {
+    res.status(200).send({status:"Deleted"});
+  }
+  else
+  {
+    res.status(200).send({status:"No user to be deleted"});
+  }
 });
-
 
 export default router;
