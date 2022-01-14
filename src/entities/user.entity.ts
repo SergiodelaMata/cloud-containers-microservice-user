@@ -5,6 +5,9 @@ export class UserEntity {
   @PrimaryColumn("varchar", { length: 100 })
   userId: string;
 
+  @Column("varchar", {length: 100})
+  password: string;
+
   @Column("varchar", {length: 5})
   rol: string;
 

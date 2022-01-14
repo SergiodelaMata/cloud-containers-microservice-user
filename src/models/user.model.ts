@@ -24,6 +24,7 @@ export class UserModel {
   public static async saveUser(req: Request): Promise<boolean> {
     const user: UserEntity = new UserEntity();
     user.userId = uuidv4(); //genera un identificador
+    user.password = req.body.password;
     user.rol = req.body.rol;
     user.name = req.body.name;
     user.firstsurname = req.body.firstsurname;
@@ -52,6 +53,7 @@ export class UserModel {
         .getRepository(UserEntity);
 
       const user: UserEntity = await UserModel.getUser(req.body.userId);
+      user.password = req.body.password;
       user.rol = req.body.rol;
       user.name = req.body.name;
       user.firstsurname = req.body.firstsurname;

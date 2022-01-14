@@ -13,6 +13,7 @@ export class DataGenerator {
       user1.userId = uuidv4();
       user1.rol = "admin";
       user1.name = "admin";
+      user1.password = "admin";
       user1.firstsurname = "";
       user1.secondsurname = "";
       user1.email = "admin@gmail.com";
@@ -24,6 +25,7 @@ export class DataGenerator {
       user2.userId = uuidv4();
       user2.rol = "user";
       user2.name = "user1";
+      user2.password = "user1";
       user2.firstsurname = "ready";
       user2.secondsurname = "ready";
       user2.email = "user1.ready@gmail.com";

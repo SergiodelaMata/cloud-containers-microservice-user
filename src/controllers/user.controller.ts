@@ -6,12 +6,14 @@ export interface GetUsers {
   userData: UserEntity | UserEntity[];
   logged: boolean;
   userId: string;
+  rol : string;
 }
 
 export interface GetUser {
   userData: UserEntity;
   logged: boolean;
   userId: string;
+  rol : string;
 }
 export class UserController {
   public static async getUsers(req: Request): Promise<GetUsers> {
@@ -19,6 +21,7 @@ export class UserController {
       userData: await UserModel.getUsers(),
       logged: false,
       userId: null,
+      rol: null,
     };
   }
 
@@ -27,6 +30,7 @@ export class UserController {
       userData: await UserModel.getUser(req.params.userId),
       logged: false,
       userId: null,
+      rol: null,
     };
   }
 
