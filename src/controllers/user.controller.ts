@@ -34,8 +34,17 @@ export class UserController {
     };
   }
 
+  public static async getUserByEmail(req: Request): Promise<GetUser> {
+    return {
+      userData: await UserModel.getUserByEmail(req.params.email),
+      logged: false,
+      userId: null,
+      rol: null,
+    };
+  }
 
-  public static async saveUser(req: Request): Promise<boolean> {
+
+  public static async saveUser(req: Request): Promise<string> {
     return await UserModel.saveUser(req);
   }
 

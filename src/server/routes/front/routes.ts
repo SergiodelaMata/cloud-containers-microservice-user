@@ -13,16 +13,16 @@ router.get("/users/:userId", async(_req: Request, res: Response) =>{
   res.send(userData);
 })
 
+router.get("/user/email/:email", async(_req: Request, res: Response) =>{
+  const userData: GetUser = await UserController.getUserByEmail(_req);
+  res.send(userData);
+})
+
+
 router.post("/user", async(_req: Request, res: Response) => {
   const verify = await UserController.saveUser(_req);
-  if(verify)
-  {
-    res.status(200).send({status:"Saved"});
-  }
-  else
-  {
-    res.status(200).send({status:"User already saved"});
-  }
+  const response = JSON.parse(JSON.stringify(verify));
+  res.status(200).send(response);
 });
 
 router.put("/user/update", async(_req: Request, res: Response) => {
