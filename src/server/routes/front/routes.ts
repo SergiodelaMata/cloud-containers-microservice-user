@@ -27,14 +27,8 @@ router.post("/user", async(_req: Request, res: Response) => {
 
 router.put("/user/update", async(_req: Request, res: Response) => {
   const verify = await UserController.updateUser(_req);
-  if(verify)
-  {
-    res.status(200).send({status:"Updated"});
-  }
-  else
-  {
-    res.status(200).send({status:"User couldn't be updated"});
-  }
+  const response = JSON.parse(JSON.stringify(verify));
+  res.status(200).send(response);
 });
 
 

@@ -48,7 +48,7 @@ export class UserController {
     return await UserModel.saveUser(req);
   }
 
-  public static async updateUser(req: Request): Promise<boolean> {
+  public static async updateUser(req: Request): Promise<string> {
     return await UserModel.updateUser(req);
   }
 
