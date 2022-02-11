@@ -18,8 +18,8 @@ export class DataGenerator {
       user1.secondsurname = "admin";
       user1.email = "admin@gmail.com";
       user1.telephone = "123456789";
-      user1.creditcard = null;
-      user1.expiredatecreditcard = null;
+      user1.creditcard = "4109644030727462";
+      user1.expiredatecreditcard = "2025/07";
       
       const user2: UserEntity = new UserEntity();
       user2.userId = "9e53c23c-dd58-4b8b-8182-eb396c79540d";
@@ -30,8 +30,8 @@ export class DataGenerator {
       user2.secondsurname = "ready";
       user2.email = "user1.ready@gmail.com";
       user2.telephone = "987654321";
-      user2.creditcard = null;
-      user2.expiredatecreditcard = null;
+      user2.creditcard = "6509845773726980";
+      user2.expiredatecreditcard = "2030/06";
 
       const user3: UserEntity = new UserEntity();
       user3.userId = "50d49dd8-f893-4d27-a721-8b55f86f6add";
@@ -42,8 +42,8 @@ export class DataGenerator {
       user3.secondsurname = "admin2";
       user3.email = "admin2@gmail.com";
       user3.telephone = "234567890";
-      user3.creditcard = null;
-      user3.expiredatecreditcard = null;
+      user3.creditcard = "9643987540563162";
+      user3.expiredatecreditcard = "2025/08";
 
       const user4: UserEntity = new UserEntity();
       user4.userId = "3190c587-50b6-46a7-90ab-36eec1293296";
@@ -54,8 +54,8 @@ export class DataGenerator {
       user4.secondsurname = "prepare";
       user4.email = "user2.prepare@gmail.com";
       user4.telephone = "098765432";
-      user4.creditcard = null;
-      user4.expiredatecreditcard = null;
+      user4.creditcard = "5078602913458922";
+      user4.expiredatecreditcard = "2027/10";
 
 
       try {
