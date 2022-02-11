@@ -29,7 +29,7 @@ export class UserEntity {
   @Column("varchar", {length: 16, unique: true, nullable: true})
   creditcard: string;
 
-  @Column("datetime", {nullable: true})
-  expiredatecreditcard: Date;
+  @Column("varchar", {length: 7, nullable: true})
+  expiredatecreditcard: string;
 
 }
