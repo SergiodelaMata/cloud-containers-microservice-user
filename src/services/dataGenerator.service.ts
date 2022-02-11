@@ -10,7 +10,7 @@ export class DataGenerator {
       .find();
     if (users.length === 0) {
       const user1: UserEntity = new UserEntity();
-      user1.userId = uuidv4();
+      user1.userId = "23436396-18ff-41c4-b1dd-a4bdb0f1b2d7";
       user1.rol = "admin";
       user1.name = "admin";
       user1.password = "admin";
@@ -22,7 +22,7 @@ export class DataGenerator {
       user1.expiredatecreditcard = null;
       
       const user2: UserEntity = new UserEntity();
-      user2.userId = uuidv4();
+      user2.userId = "9e53c23c-dd58-4b8b-8182-eb396c79540d";
       user2.rol = "user";
       user2.name = "user1";
       user2.password = "user1";
@@ -34,7 +34,7 @@ export class DataGenerator {
       user2.expiredatecreditcard = null;
 
       const user3: UserEntity = new UserEntity();
-      user3.userId = uuidv4();
+      user3.userId = "50d49dd8-f893-4d27-a721-8b55f86f6add";
       user3.rol = "admin";
       user3.name = "admin2";
       user3.password = "admin2";
@@ -46,7 +46,7 @@ export class DataGenerator {
       user3.expiredatecreditcard = null;
 
       const user4: UserEntity = new UserEntity();
-      user4.userId = uuidv4();
+      user4.userId = "3190c587-50b6-46a7-90ab-36eec1293296";
       user4.rol = "user";
       user4.name = "user2";
       user4.password = "user2";
