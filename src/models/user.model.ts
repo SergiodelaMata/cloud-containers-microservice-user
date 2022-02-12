@@ -34,7 +34,6 @@ export class UserModel {
       const user: UserEntity = new UserEntity();
       user.userId = uuidv4(); //genera un identificador
       user.password = req.body.password;
-      console.log(req.body);
       if(req.body.rol && req.body.name && req.body.firstsurname && req.body.secondsurname && req.body.email && req.body.telephone)
       {
         user.rol = req.body.rol;
@@ -63,7 +62,6 @@ export class UserModel {
       console.log("Error al insertar el usuario: " + error);
       status = {status:"Error with insertion"};
     }
-    console.log(status);
     return JSON.stringify(status);
   }
 
@@ -76,7 +74,6 @@ export class UserModel {
 
       const user: UserEntity = await UserModel.getUser(req.body.userId);
       user.password = req.body.password;
-      console.log(req.body);
       if(req.body.rol && req.body.name && req.body.firstsurname && req.body.secondsurname && req.body.email && req.body.telephone)
       {
         user.rol = req.body.rol;
@@ -101,7 +98,6 @@ export class UserModel {
       console.log("Error al actualizar los datos del usuario: " + error);
       status = {status:"Error with update"};
     }
-    console.log(status);
     return JSON.stringify(status);
   }
 
