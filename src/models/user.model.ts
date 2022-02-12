@@ -43,6 +43,12 @@ export class UserModel {
         user.secondsurname = req.body.secondsurname;
         user.email = req.body.email;
         user.telephone = req.body.telephone;
+        if(req.body.creditcard && req.body.expiredatecreditcard)
+        {
+          user.creditcard = req.body.creditcard;
+          user.expiredatecreditcard = req.body.expiredatecreditcard;
+        }
+
         UserModel.repository = await database
           .getConnection()
           .getRepository(UserEntity);
@@ -79,6 +85,11 @@ export class UserModel {
         user.secondsurname = req.body.secondsurname;
         user.email = req.body.email;
         user.telephone = req.body.telephone;
+        if(req.body.creditcard && req.body.expiredatecreditcard)
+        {
+          user.creditcard = req.body.creditcard;
+          user.expiredatecreditcard = req.body.expiredatecreditcard;
+        }
         await UserModel.repository.save(user);
         status = {status:"Updated data"};
       }
